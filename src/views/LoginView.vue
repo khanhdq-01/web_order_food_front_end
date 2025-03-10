@@ -1,10 +1,10 @@
-<template lang="">
+<template>
     <div class="container">
         <div class="row vh-100 justify-content-center align-items-center login-container">
             <div class="col-md-4">
                 <div class="card mt-5 shadow">
                     <div class="card-body">
-                        <h3 class="card-body">Đăng nhập</h3>
+                        <h3 class="card-title">Đăng nhập</h3>
                         <form @submit.prevent>
                             <div class="form-group mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -59,10 +59,12 @@ export default {
     },
     mounted(){
     this.userName = localStorage.getItem('name')
-    if (this.userName || this.userName != '' || this.userName !=null){
+    console.log("🔹 Giá trị userName:", this.userName);
+    if (this.userName && this.userName !== "null" && this.userName.trim() !== '') 
+    {
       router.push({ name: 'home'})
     }
-  },
+    },
     
 }
 </script>

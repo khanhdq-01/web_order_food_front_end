@@ -1,11 +1,18 @@
 <template lang="">
+  <!-- navbar -->
+   <NavBar :name=userName />
   <div class = "home">
-   {{userName}}
+   <span style="text-align:center" > {{userName}} </span>
   </div>
 </template>
 <script>
 import router from '@/router';
+import NavBar from '@/components/NavBar.vue';
 export default {
+
+  components:{
+    NavBar
+  },
   data() {
     return {
       userName: ''
